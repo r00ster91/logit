@@ -132,14 +132,6 @@ fn main() {
             }
         }
         Specifier::First => {
-            // // Start at the first commit ever made.
-            // revwalk.set_sorting(Sort::TIME | Sort::REVERSE).unwrap();
-
-            // if let Some(commit_id) = revwalk.next() {
-            //     let commit = get_commit(commit_id, &repo);
-            //     commits.push(commit);
-            // }
-
             for commit_id in revwalk {
                 let commit = get_commit(commit_id, &repo);
                 commits.push(commit);
